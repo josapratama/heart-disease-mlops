@@ -21,11 +21,11 @@ env/
 josa_pratama-pipeline/pipeline_output/
 josa_pratama-pipeline/tuner_output/
 
-# Model binary files (terlalu besar untuk git)
-serving/model/
-*.h5
-*.pb
-saved_model/
+# Model binary files (besar, generated - uncomment jika perlu)
+# serving/model/
+# *.h5
+# *.pb
+# saved_model/
 
 # Downloaded model folder dari Colab
 1789723334/
