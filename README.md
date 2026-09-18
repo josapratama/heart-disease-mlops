@@ -124,7 +124,7 @@ Model di-serving menggunakan **TensorFlow Serving** yang dibungkus dengan Flask 
 
 ## Web App
 
-URL model serving: `https://josa-pratama-heart-disease.railway.app`
+URL model serving: `https://heart-disease-mlops-production.up.railway.app`
 
 ### Endpoints
 
