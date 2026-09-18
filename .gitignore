@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Pipeline output (terlalu besar, generated files)
+josa_pratama-pipeline/pipeline_output/
+josa_pratama-pipeline/tuner_output/
+
+# Model binary files (terlalu besar untuk git)
+serving/model/
+*.h5
+*.pb
+saved_model/
+
+# Downloaded model folder dari Colab
+1789723334/
+
+# Monitoring persistent data
+monitoring/grafana/data/
+prometheus_data/
+grafana_data/
+
+# Docker
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Temp files
+serving/check_model.py
+tugas.txt
+
+# Zip dan screenshot lokal
+*.zip
+ss/
