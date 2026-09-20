@@ -1,7 +1,7 @@
 FROM tensorflow/serving:latest
 
-COPY ./model/heart_disease_model /models/heart_disease_model
-COPY ./monitoring_config.txt /model_config/prometheus.config
+COPY serving/model/heart_disease_model /models/heart_disease_model
+COPY serving/monitoring_config.txt /model_config/prometheus.config
 
 ENV MODEL_NAME=heart_disease_model
 ENV MONITORING_CONFIG="/model_config/prometheus.config"
