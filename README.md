@@ -49,7 +49,8 @@
 │           └── ml_monitoring.json  # Grafana dashboard definition
 ├── ss/
 │   ├── josa_pratama-deployment.png # Screenshot TF Serving di Railway
-│   └── josa_pratama-monitoring.png # Screenshot Prometheus/Grafana metrics
+│   ├── josa_pratama-monitoring.png # Screenshot Prometheus metrics
+│   └── josa_pratama-grafana.png    # Screenshot Grafana dashboard
 ├── heart_disease_pipeline.ipynb    # Notebook pipeline utama (BeamDagRunner)
 ├── prediction_request.ipynb        # Notebook prediction request ke cloud
 └── README.md
