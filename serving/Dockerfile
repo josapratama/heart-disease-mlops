@@ -1,18 +1,17 @@
-FROM python:3.10-slim
+FROM tensorflow/serving:latest
 
-WORKDIR /app
+COPY serving/model/heart_disease_model /models/heart_disease_model
+COPY serving/monitoring_config.txt /model_config/prometheus.config
 
-# Install dependencies
-COPY serving/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+ENV MODEL_NAME=heart_disease_model
+ENV MODEL_BASE_PATH=/models
+ENV MONITORING_CONFIG="/model_config/prometheus.config"
+ENV PORT=8501
 
-# Copy app and model
-COPY serving/app.py .
-COPY serving/model ./model
-
-ENV MODEL_DIR=/app/model/heart_disease_model/1
-ENV PORT=8080
-
-EXPOSE 8080
-
-CMD gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120
+RUN echo '#!/bin/bash \n\n\
+env \n\
+tensorflow_model_server --port=8500 --rest_api_port=${PORT} \
+--model_name=${MODEL_NAME} --model_base_path=${MODEL_BASE_PATH} \
+--monitoring_config_file=${MONITORING_CONFIG} \
+"$@"' > /usr/bin/tf_serving_entrypoint.sh \
+&& chmod +x /usr/bin/tf_serving_entrypoint.sh
