@@ -153,7 +153,6 @@ def _build_keras_model(hp) -> tf.keras.Model:
         activation='relu',
         kernel_regularizer=tf.keras.regularizers.L2(0.001),
     )(concatenated)
-    x = tf.keras.layers.BatchNormalization()(x)
     x = tf.keras.layers.Dropout(rate=get_hp('dropout_1', 0.3))(x)
 
     # Hidden layer 2
@@ -162,7 +161,6 @@ def _build_keras_model(hp) -> tf.keras.Model:
         activation='relu',
         kernel_regularizer=tf.keras.regularizers.L2(0.001),
     )(x)
-    x = tf.keras.layers.BatchNormalization()(x)
     x = tf.keras.layers.Dropout(rate=get_hp('dropout_2', 0.2))(x)
 
     # Hidden layer 3

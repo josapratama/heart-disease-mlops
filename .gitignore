@@ -23,3 +23,9 @@ josa_pratama-pipeline/pipeline_metadata/
 tugas.txt
 .DS_Store
 Thumbs.db
+
+# Model zip files (not needed in repo)
+*.zip
+
+# Railway config (local only)
+.railway/
